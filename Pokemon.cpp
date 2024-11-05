@@ -56,7 +56,7 @@ void Pokemon::basicAttack(Pokemon& opponent) {
 /// </summary>
 /// <param name="opponent">Opposing pokemon</param>
 /// <param name="damage">original damage</param>
-/// <returns></returns>
+/// <returns></returns> 
 int Pokemon::calculateDamage(Pokemon& opponent, int damage) {
 	if (type == "Grass") {
 		if (opponent.type == "Fire") {

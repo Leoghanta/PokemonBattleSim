@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include "Pokemon.h"
-
+ 
 class Pikachu : public Pokemon {
 
 public:

@@ -1,6 +1,6 @@
 /* PIKACHU CLASS METHODS
 */
-
+ 
 #include <iostream>
 #include "Pikachu.h"
 

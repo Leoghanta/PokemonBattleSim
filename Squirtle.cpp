@@ -3,7 +3,7 @@
 */
 #include <iostream>
 #include "Squirtle.h"
-
+  
 //Constructor
 Squirtle::Squirtle() : Pokemon("Squirtle", "Water", 100, 25) {};
 

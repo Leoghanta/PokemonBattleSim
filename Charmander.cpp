@@ -3,7 +3,7 @@
 */
 #include <iostream>
 #include "Charmander.h"
-
+ 
 //Constructor
 Charmander::Charmander() : Pokemon("Charmander", "Fire", 100, 25) {};
 
