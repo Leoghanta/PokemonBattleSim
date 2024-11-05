@@ -48,7 +48,49 @@ void Pokemon::actionMenu(Pokemon& opponent) {
 /// <param name="opponent">Opposing Pokemon</param>
 void Pokemon::basicAttack(Pokemon& opponent) {
 	std::cout << name << " attacks " << opponent.name << " with a basic attack " << std::endl;
-	opponent.takeDamage(strength);
+	opponent.takeDamage(calculateDamage(opponent, strength));
+}
+
+/// <summary>
+/// Calculate the new damage adjusting to strengths and weaknesses against types
+/// </summary>
+/// <param name="opponent">Opposing pokemon</param>
+/// <param name="damage">original damage</param>
+/// <returns></returns>
+int Pokemon::calculateDamage(Pokemon& opponent, int damage) {
+	if (type == "Grass") {
+		if (opponent.type == "Fire") {
+			//Fire is strong against grass so reduce the damage the fire type receives
+			return damage / 2; //this is an integer division
+		}
+		else if (opponent.type == "Water") {
+			//Grass is strong against water so multiply the damage to the water type.
+			return damage * 2;
+		}
+	}
+	if (type == "Water") {
+		if (opponent.type == "Fire") {
+			//Water is strong against fire types, double the damage
+			return damage * 2;
+		}
+		else if (opponent.type == "Grass") {
+			//Water is weak to grass so half the damage
+			return damage / 2;
+		}
+	}
+	if (type == "Fire") {
+		if (opponent.type == "Water") {
+			//Fire is weak to water, so half the damage
+			return damage / 2;
+		}
+		else if (opponent.type == "Grass") {
+			//Fire is strong against grass so double the damage
+			return damage * 2;
+		}
+	}
+
+	//If we get here, there is no change in damage, return original damage
+	return damage;
 }
 
 /// <summary>
@@ -100,3 +142,12 @@ void Pokemon::takeDamage(int damage) {
 int Pokemon::getHealth() {
 	return health;
 }
+
+/// <summary>
+/// Getter for Pokemon's Name.
+/// </summary>
+/// <returns>Pokemon's name</returns>
+std::string Pokemon::getName() {
+	return name;
+}
+

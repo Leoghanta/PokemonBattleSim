@@ -6,7 +6,7 @@
 */
 
 class Pokemon {
-private:
+protected:
     std::string name;
     std::string type;
     int health;
@@ -19,10 +19,12 @@ public:
     Pokemon(std::string n, std::string t, int h, int s);
 
     //Methods
-    void actionMenu(Pokemon& opponent);
-    void basicAttack(Pokemon& opponent);
+    virtual void actionMenu(Pokemon& opponent);
+    virtual void basicAttack(Pokemon& opponent);
+    int calculateDamage(Pokemon& opponent, int damage);
     void heal(int amount);
     bool runAway();
     void takeDamage(int damage);
     int getHealth();
+    std::string getName();
 };

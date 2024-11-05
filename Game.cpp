@@ -3,6 +3,10 @@
 
 #include <iostream>
 #include "Game.h"
+#include "Pikachu.h"
+#include "Squirtle.h"
+#include "Bulbasaur.h"
+#include "Charmander.h"
 
 /// <summary>
 /// Start the Simulator by choosing pokemon and battling.
@@ -24,10 +28,10 @@ Pokemon* Game::SelectPokemon(std::string prompt) {
 	std::cin >> choice;
 
 	switch (choice) {
-	case 1: return new Pokemon("Pikachu", "Electric", 100, 25);
-	case 2: return new Pokemon("Charmander", "Fire", 100, 20);
-	case 3: return new Pokemon("Squirtle", "Water", 100, 20);
-	case 4: return new Pokemon("Bulbasaur", "Grass", 100, 20);
+	case 1: return new Pikachu();
+	case 2: return new Charmander();
+	case 3: return new Squirtle();
+	case 4: return new Bulbasaur();
 	default:
 		std::cout << "Invalid Choice! You're getting a Jigglypuff!" << std::endl;
 		return new Pokemon("JigglyPuff", "Fairy", 10, 1);
