@@ -7,7 +7,7 @@ class Bulbasaur : public Pokemon {
 public:
 	Bulbasaur();
 
-	void actionMenu(Pokemon& opponent) override;
+	Pokemon* actionMenu(Pokemon& opponent) override;
 	void basicAttack(Pokemon& opponent) override;
 
 };

@@ -1,13 +1,11 @@
 #pragma once
-#include <iostream>
-#include "Pokemon.h"
- 
-class Squirtle : public Pokemon {
+#include "squirtle.h"
 
+class Wartortle : public Squirtle {
 public:
-	Squirtle();
+	Wartortle();
 
 	Pokemon* actionMenu(Pokemon& opponent) override;
 	void basicAttack(Pokemon& opponent) override;
-
+	void specialAttack(Pokemon& opponent);
 };

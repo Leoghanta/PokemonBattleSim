@@ -11,6 +11,7 @@ Pokemon::Pokemon(std::string n, std::string t, int h, int s) {
 	health = h;
 	strength = s;
 	max_health = health;
+	experience = 0;
 	std::cout << name << " clambers to his feet." << std::endl;
 }
 
@@ -20,7 +21,7 @@ Pokemon::Pokemon(std::string n, std::string t, int h, int s) {
 /// Ask to perform an action for this pokemon. attack, heal, or run.
 /// </summary>
 /// <param name="opponent">Pokemon opponent</param>
-void Pokemon::actionMenu(Pokemon& opponent) {
+Pokemon* Pokemon::actionMenu(Pokemon& opponent) {
 	int choice;
 	std::cout << name << ", select an action" << std::endl;
 	std::cout << "   1. Attack\n   2.Heal\n   3.Run Away" << std::endl;
@@ -40,6 +41,7 @@ void Pokemon::actionMenu(Pokemon& opponent) {
 	else {
 		std::cout << name << " looks at you funny and shrugs. What does " << choice << " mean?" << std::endl;
 	}
+	return this;
 }
 
 /// <summary>
@@ -151,3 +153,18 @@ std::string Pokemon::getName() {
 	return name;
 }
 
+/// <summary>
+/// function to gain a bit of experience.
+/// </summary>
+void Pokemon::gainExperience() {
+	experience += 10;
+}
+
+std::ostream& operator<<(std::ostream& os, const Pokemon& p) {
+	os << "___" << p.name << " the " << p.type << " pokemon ____________________" << "\n" <<
+		"  Health:     " << p.health << "\n" <<
+		"  Strength:   " << p.strength << "\n" <<
+		"  Experience: " << p.experience << "\n" <<
+		"___________________________________________________" << std::endl;
+	return os;
+}

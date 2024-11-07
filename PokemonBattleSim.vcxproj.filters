@@ -36,6 +36,12 @@
     <ClCompile Include="Charmander.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Raichu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Wartortle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Pokemon.h">
@@ -54,6 +60,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Bulbasaur.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Raichu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Wartortle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

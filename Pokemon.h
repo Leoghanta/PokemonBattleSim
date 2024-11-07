@@ -12,6 +12,7 @@ protected:
     int health;
     int strength;
     int max_health;
+    int experience;
 
 public:
 
@@ -19,7 +20,7 @@ public:
     Pokemon(std::string n, std::string t, int h, int s);
 
     //Methods
-    virtual void actionMenu(Pokemon& opponent);
+    virtual Pokemon* actionMenu(Pokemon& opponent);
     virtual void basicAttack(Pokemon& opponent);
     int calculateDamage(Pokemon& opponent, int damage);
     void heal(int amount);
@@ -27,4 +28,6 @@ public:
     void takeDamage(int damage);
     int getHealth();
     std::string getName();
+    void gainExperience();
+    friend std::ostream& operator<<(std::ostream& os, const Pokemon& p);
 };

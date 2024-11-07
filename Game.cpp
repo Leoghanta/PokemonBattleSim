@@ -43,12 +43,13 @@ Pokemon* Game::SelectPokemon(std::string prompt) {
 /// </summary>
 void Game::Battle() {
 	while ((playerPokemon->getHealth() > 0) && (opponentPokemon->getHealth() > 0)) {
-		std::cout << "Your Turn!" << std::endl;
-		playerPokemon->actionMenu(*opponentPokemon);
+		std::cout << "Your Turn!\n"<< *playerPokemon << std::endl;
+		playerPokemon = playerPokemon->actionMenu(*opponentPokemon);
+		playerPokemon->gainExperience();
 
 		if (opponentPokemon->getHealth() > 0) {
-			std::cout << "Opponent's Turn!" << std::endl;
-			opponentPokemon->actionMenu(*playerPokemon);
+			std::cout << "Opponent's Turn!\n" << *opponentPokemon << std::endl;
+			opponentPokemon = opponentPokemon->actionMenu(*playerPokemon);
 		}
 	}
 	std::cout << "\n\nBATTLE ENDS!" << std::endl;

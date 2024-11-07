@@ -7,7 +7,7 @@ class Pikachu : public Pokemon {
 public:
 	Pikachu();
 
-	void actionMenu(Pokemon& opponent) override;
+	Pokemon* actionMenu(Pokemon& opponent) override;
 	void basicAttack(Pokemon& opponent) override;
 
 };

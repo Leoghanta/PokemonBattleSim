@@ -7,7 +7,7 @@
 //Constructor
 Bulbasaur::Bulbasaur() : Pokemon("Bulbasaur", "Grass", 100, 25) {};
 
-void Bulbasaur::actionMenu(Pokemon& opponent) {
+Pokemon* Bulbasaur::actionMenu(Pokemon& opponent) {
 	int choice;
 	std::cout << name << ", select an action" << std::endl;
 	std::cout << "   1.Body Slam\n   2.Heal\n   3.Run Away" << std::endl;
@@ -27,6 +27,7 @@ void Bulbasaur::actionMenu(Pokemon& opponent) {
 	else {
 		std::cout << name << " looks at you funny and shrugs. What does " << choice << " mean?" << std::endl;
 	}
+	return this;
 }
 
 void Bulbasaur::basicAttack(Pokemon& opponent) {

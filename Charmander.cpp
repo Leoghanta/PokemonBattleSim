@@ -7,7 +7,7 @@
 //Constructor
 Charmander::Charmander() : Pokemon("Charmander", "Fire", 100, 25) {};
 
-void Charmander::actionMenu(Pokemon& opponent) {
+Pokemon* Charmander::actionMenu(Pokemon& opponent) {
 	int choice;
 	std::cout << name << ", select an action" << std::endl;
 	std::cout << "   1.Flame Thrower\n   2.Heal\n   3.Run Away" << std::endl;
@@ -27,6 +27,7 @@ void Charmander::actionMenu(Pokemon& opponent) {
 	else {
 		std::cout << name << " looks at you funny and shrugs. What does " << choice << " mean?" << std::endl;
 	}
+	return this;
 }
 
 void Charmander::basicAttack(Pokemon& opponent) {
